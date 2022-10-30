@@ -9,7 +9,7 @@ import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './temas/styles.js';
 import axios from 'axios';
 import Switch from 'react-switch';
-import { FaWpforms, FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaWpforms, FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube, FaMoon, FaRegLightbulb } from 'react-icons/fa'
 
 const apiCity = axios.create({
   baseURL: "https://amazon-api.sellead.com/city",
@@ -79,11 +79,41 @@ function App() {
           <Switch onChange={toggleTheme}
             className="switch-modo"
             checked={theme.name.class === 'light'}
-            checkedIcon={false}
-            uncheckedIcon={false}
+            checkedIcon={
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "100%",
+                  fontSize: 15,
+                  width:"70%",
+                  color: "black",
+                  paddingRight: 2,
+                  marginLeft: "3px"
+                }}
+              >
+                <FaRegLightbulb />
+              </div>
+            }
+            uncheckedIcon={
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "100%",
+                  fontSize: 15,
+                  color: "black",
+                  paddingRight: 2
+                }}
+              >
+                <FaMoon />
+              </div>
+            }
             height={22}
-            width={40}
-            handleDiameter={15}
+            width={60}
+            handleDiameter={18}
             onColor="#0000FF"
             offColor='#FFA800'
           >
@@ -131,27 +161,27 @@ function App() {
         <footer className='footer'>
           <ul className='social_list'>
             <li>
-              <a className='a_social' href='https://allyhub.co/'>
+              <a className='a_social' href='https://web.facebook.com/allyhubedu?_rdc=1&_rdr' target="blank">
                 <FaFacebook />
               </a>
             </li>
             <li>
-              <a className="a_social" href='https://allyhub.co/'>
+              <a className="a_social" href='https://www.instagram.com/allyhubedu/' target="blank">
                 <FaInstagram />
               </a>
             </li>
             <li>
-              <a className="a_social" href='https://allyhub.co/'>
+              <a className="a_social" href='https://www.linkedin.com/company/allyhubedu/' target="blank">
                 <FaLinkedin />
               </a>
             </li>
             <li>
-              <a className="a_social" href='https://allyhub.co/'>
+              <a className="a_social" href='https://twitter.com/allyhubedu' target="blank">
                 <FaTwitter />
               </a>
             </li>
             <li>
-              <a className="a_social" href='https://allyhub.co/'>
+              <a className="a_social" href='https://www.youtube.com/channel/UCMgpaV2yWo7kwT3hVY6AqQw' target="blank">
                 <FaYoutube />
               </a>
             </li>
